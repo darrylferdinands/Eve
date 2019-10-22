@@ -6,9 +6,8 @@
 }
 
 .top-component-media{
-    display: flex;
+    display: block;
     font-size: 1rem;
-    overflow-x: hidden;
     height: 100vh;
     width: 100%;
     align-items: center;
@@ -26,13 +25,12 @@
 .top-component-media video{
     min-width: 100%;
     min-height: 100%;
-    z-index: -1;
 }
 .top-component-content{
     color:#fff;
     text-align: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 10vh;
     z-index: 2;
 }
 .top-component-content h1{
