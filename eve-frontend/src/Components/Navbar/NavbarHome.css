@@ -1,6 +1,5 @@
 .navbar{
-    background: -webkit-linear-gradient( #212121, #181818);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
     padding-bottom: 1.5rem;
 }
 .nav-btn{
@@ -9,15 +8,14 @@
 .navbar-btn{
     margin-top: 2rem;
     background: transparent ;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     border-radius: 10px;
     color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
     font-weight: 800;
 }
 .navbar-btn:hover{
-    background-color: rgb(245, 240, 240,232);
+    background-color: aliceblue;
 }
 .navbar-brand img{
     top:0px;

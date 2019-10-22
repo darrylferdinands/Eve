@@ -1,6 +1,5 @@
 .home-page{
     margin: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     overflow: hidden;
     line-height: 1.5;
@@ -8,7 +7,6 @@
 
 .top-component-media{
     display: flex;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     overflow-x: hidden;
     height: 100vh;
@@ -18,7 +16,7 @@
 
 .top-component-media{
     position: absolute;
-    top:8rem;
+    top:0;
     z-index: -1;
     left:0;
     width:100%;
@@ -34,28 +32,29 @@
     color:#fff;
     text-align: center;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 100px;
     z-index: 2;
 }
 .top-component-content h1{
     font-size: 60px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     text-shadow: #fff;
     margin-bottom: 0;
 }
 .top-component-content p{
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: #fff;
     display: block;
     padding-bottom: 2rem;
 }
 .top-component-content-btn, .top-component-content-btn:hover{
-    background: #1e0a3c;
+    background: #ed9d3a;
+    border-radius: 15px;
     color: #fff;
+    font-weight: bold;
     font-size: 20px;
     padding: 1rem 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none; 
 }
 
@@ -63,8 +62,15 @@
     margin-top: 15%;
     padding: 5rem;
     text-align: center;
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.cards1 {
+border-radius: 15px;
+}
+
+.card-body,overflow {
+    border-radius: 15px; 
 }
 
 .cards-main{
@@ -74,6 +80,8 @@
 {
     display: inline-block;
     margin-top: 10%;
+    cursor: pointer;
+    border-radius:15px 15px 0px 0px;
     align-items: center;
     width: 44rem;
     height: 35rem;
@@ -83,12 +91,12 @@
 .btn-card, .btn-card:hover{
     padding: 2rem 2rem;
     margin-bottom: 20%;
+    border-radius:0px 0px 15px 15px;
     width: 44rem;
     height: 8rem;
     z-index: 2;
     background-color: #6f2cbd;
     color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3rem;
     font-weight: 500;
 }
@@ -100,8 +108,7 @@
 }
 .home-dark-main{
     background-color: #1d1f1f;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 150px;
+    font-size: 10vw;
     margin-top: 5%;
 }
 .home-dark-words{

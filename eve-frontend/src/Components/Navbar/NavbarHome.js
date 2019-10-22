@@ -18,7 +18,7 @@ class NavbarHome extends Component {
    
       <li><button class="btn navbar-btn navbar-btn1">Create Event</button></li>
       <li><button class="btn navbar-btn navbar-btn2">Help</button></li>
-      <li><button class="btn navbar-btn navbar-btn3">Log In</button></li>
+      <li><button class="btn navbar-btn navbar-btn3">Login</button></li>
       
     </ul>
   </div>
