@@ -1,0 +1,29 @@
+.page-footer{
+    display: inline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-company{
+    color: black;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+li{
+    display: inline-block;
+    font-weight: 500;
+}
+.footer-btn1, .footer-btn2, .footer-btn3{
+    color: black;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 0px 5px;;
+    margin: 0px;
+}
+.footer-state{
+    color: black;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: right;
+}
