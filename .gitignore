@@ -65,9 +65,4 @@ typings/
 .next
 
 # Visual Studio
-*.code-workspace
-/kp-frontend/build
-/bin
-/obj/Debug
-/washi.njsproj.user
-/washi.sln
+
