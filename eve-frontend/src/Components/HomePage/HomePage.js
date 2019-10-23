@@ -5,8 +5,14 @@ import '../HomePage/HomePage.css';
 import img1 from '../Images/img1.JPG';
 import img2 from '../Images/community.jpg';
 
+
+
+
 class HomePage extends Component{
+   
     render(){
+        
+
         return(<React.Fragment>
             <header id="container main" className="home-page">
             <NavbarHome/>
@@ -75,7 +81,7 @@ class HomePage extends Component{
                 <div className="col-xs-12 home-dark-main">
                     <div className="home-dark-words">
 
-                    <div className="ome-dark-first-word">
+                    <div className="home-dark-first-word">
                     <span className="home-dark-first-word">Your Vision</span>
                     </div>
 
@@ -91,12 +97,15 @@ class HomePage extends Component{
 
             </div>
 
-
-            <div className="row">
-
-
+            
 
             </div>
+
+            
+
+
+
+            
             <Footer/>
             </header>
         </React.Fragment>
