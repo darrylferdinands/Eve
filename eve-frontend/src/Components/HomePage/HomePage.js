@@ -43,15 +43,15 @@ class HomePage extends Component{
             
 
             <div className="row">
-                <div className="col-sm-12">
+                <div className="col-sm-12 second-component">
                     <h1 className="cards-text">Choose your Event or Community</h1>
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-sm-12 cards-main">
-                    <div className="col-sm-1"></div>
-                    <div className="col-sm-4">
+                <div className="col-xs-12 cards-main">
+                    <div className="col-xs-1"></div>
+                    <div className="col-xs-4">
                         <div className="cards1 text-center">
                                 <img src={img1} className="card-img-top"></img>
                             <div className="card-body">
@@ -60,8 +60,8 @@ class HomePage extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-2"></div>
-                    <div className="col-sm-4">
+                    <div className="col-xs-2"></div>
+                    <div className="col-xs-4">
                         <div className="cards1 text-center">
                                 <div className="overflow">
                                     <img src={img2} className="card-img-top"></img>
@@ -95,17 +95,11 @@ class HomePage extends Component{
                     </div>
                 </div>
 
+                <div className="row">
+
+                </div>
+
             </div>
-
-            
-
-            </div>
-
-            
-
-
-
-            
             <Footer/>
             </header>
         </React.Fragment>

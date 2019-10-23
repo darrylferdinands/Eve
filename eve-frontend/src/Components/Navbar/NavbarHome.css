@@ -14,8 +14,12 @@
     font-size: 18px;
     font-weight: 800;
 }
-.navbar-btn:hover{
+.navbar-btn:hover, .navbar-btn:focus{
     background-color: aliceblue;
+    border: aliceblue;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
 }
 .navbar-brand img{
     top:0px;
