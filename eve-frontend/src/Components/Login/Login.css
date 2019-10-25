@@ -1,0 +1,30 @@
+.div-center {
+  width: 20vw;
+  background-color: #fff;
+  margin: auto;
+  overflow: auto;
+  padding: 1em 1em;
+  display: table;
+  margin-top: 3vw;
+}
+.login-email{
+  height: 2.6vw;
+}
+.get-started, .get-started:hover, .get-started:focus{
+  background: #d1410c;
+  color: #fff;
+  font-size: 0.8vw;
+  font-weight: 700;
+  height: 2.6vw;
+}
+.login-lets{
+  font-size: 1.3vw;
+  font-weight: bolder;
+  text-align: center;
+}
+.login-use{
+  font-size: 0.8vw;
+  font-weight: 500;
+  text-align: center;
+}
+
