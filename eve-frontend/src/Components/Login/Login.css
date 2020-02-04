@@ -1,0 +1,64 @@
+.div-center {
+  width: 30vw;
+  background-color: #fff;
+  margin: auto;
+  padding: 1em 1em;
+  display: table;
+  margin-top: 3vw; 
+}
+.login-email{
+  height: 3vw;
+}
+.login-password{
+  height: 3vw;
+}
+.get-started, .get-started:hover, .get-started:focus{
+  background: #d1410c;
+  color: #fff;
+  font-weight: 700;
+  font-size:12px;
+  height: 3vw;
+  width:30vw;
+  margin-top: 0.9vw;
+
+}
+.login-lets{
+  font-weight: bolder;
+  text-align: center;
+  font-size:25px;
+}
+.login-use{
+  font-weight: 500;
+  text-align: center;
+  font-size:15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .div-center {
+    width: 80%;
+    background-color: #fff;
+    padding: 1em 1em;
+    display: table;
+    margin-top: 3vw; 
+  }
+
+  .get-started, .get-started:hover, .get-started:focus{
+    background: #d1410c;
+    color: #fff;
+    font-weight: 700;
+    font-size:15px;
+    height: 35px;
+    width:100%;
+    margin-top: 0.9vw;
+    
+  }
+
+  .login-email{
+    height: 35px;
+  }
+
+  .login-password{
+    height: 35px;
+  }
+
+}
