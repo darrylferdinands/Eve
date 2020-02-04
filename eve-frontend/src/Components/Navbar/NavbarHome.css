@@ -1,29 +1,25 @@
 .navbar{
     background: transparent;
-    border-color: transparent;
+    padding-bottom: 1.5rem;
 }
-
-.navbar .collapse{
-    border-color: transparent;
+.nav-btn{
+    margin-right: 15rem;
 }
-
-.navbar-btn{ 
+.navbar-btn{
+    margin-top: 2rem;
     background: transparent ;
+    padding: 0.5rem 2rem;
     border-radius: 10px;
     color: aliceblue;
     font-size: 18px;
     font-weight: 800;
 }
-.navbar-btn:hover, .navbar-btn:focus{
+.navbar-btn:hover{
     background-color: aliceblue;
-    border: aliceblue;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 800;
 }
 .navbar-brand img{
     top:0px;
-    margin-left: 2vw;
+    margin-left: 20rem;
     width: 12rem;
     height: 6rem;
 }
