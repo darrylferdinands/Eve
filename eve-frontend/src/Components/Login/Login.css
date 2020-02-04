@@ -7,17 +7,17 @@
   margin-top: 3vw; 
 }
 .login-email{
-  height: 3vw;
+  height: 2.5vw;
 }
 .login-password{
-  height: 3vw;
+  height: 2.5vw;
 }
 .get-started, .get-started:hover, .get-started:focus{
   background: #d1410c;
   color: #fff;
   font-weight: 700;
   font-size:12px;
-  height: 3vw;
+  height: 2.5vw;
   width:30vw;
   margin-top: 0.9vw;
 

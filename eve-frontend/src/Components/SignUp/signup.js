@@ -23,21 +23,17 @@ class SignUp extends Component{
                         <h3 className="login-use">Create an account</h3>
                         <hr />
                         <form>
+                        <div className="form-group names">
+                            <input type="text" className="form-control signup-fname" id="exampleInputFName" placeholder="Name"/>
+                        </div>
                         <div className="form-group">
                             <input type="email" className="form-control login-email" id="exampleInputEmail1" placeholder="Email address"/>
-                        </div>
-                        <div className="input-group names">
-                            <input type="text" className="form-control signup-fname" id="exampleInputFName" placeholder="First Name"/>
-                            <span class="input-group-addon"> </span>
-                            <input type="text" className="form-control signup-lname" id="exampleInputLName" placeholder="Last Name"/>
                         </div>
                         <div className="form-group">
                             <input type="password" className="form-control signup-password" id="exampleInputPassword" placeholder="Password"/>
                         </div>
                         
                         <button type="submit" className="btn form-control get-started">Sign Up</button>
-
-                           <button type="submit" className="btn form-control get-started"><a href="/login" style={{color:'white'}}>Login</a></button>
                         <hr />
                        
                     

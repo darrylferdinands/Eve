@@ -2,10 +2,59 @@ import React, {Component} from 'react';
 import NavbarLogin from '../Navbar/NavbarLogin.js';
 import Footer from '../Footer/Footer';
 import './Login.css';
+import axios from 'axios';
 
 
 class Login extends Component{
+    constructor(props){
+        super(props);
+        this.state ={
+          authFlag: false,
+          email: "",
+          password:"",
+        }
+    }
+
+    handleEmailChange = (e) =>{
+        this.setState({
+            email : e.target.value
+        })
+    }
+
+    handlePasswordChange = (e) =>{
+        this.setState({
+            password : e.target.value
+        })
+    }
+
+    handleLoginUser = (e) => {
+        e.preventDefault();
+        const data ={
+            email : this.state.email,
+            password : this.state.password,
+        }
+        axios.defaults.withCredentials = true;
+        axios.post('http://localhost:3001/api/auth',data)
+            .then(response => {
+                console.log("Status Code : ",response.status);
+                console.log(response.data);
+                if(response.status === 200){
+                    this.setState({
+                        authFlag : true,
+                        email:response.data
+                    })
+                }else{
+                    this.setState({
+                        authFlag : false
+                    })
+                }
+            }).catch(err => {
+                this.setState({error : true});
+                console.log(err);
+            });
+    }
     render(){
+      
         return(<React.Fragment>
             <div id="container" className="LoginMain">
                 <div className="main">
@@ -24,16 +73,13 @@ class Login extends Component{
                         <hr />
                         <form>
                         <div className="form-group">
-                            <input type="email" className="form-control login-email" id="exampleInputEmail1" placeholder="Email address"/>
+                            <input type="email" onChange={this.handleEmailChange} className="form-control login-email" id="exampleInputEmail1" placeholder="Email address"/>
                         </div>
                         <div className="form-group">
-                            <input type="password" className="form-control login-password" id="exampleInputPassword" placeholder="Password"/>
+                            <input type="password" onChange={this.handlePasswordChange} className="form-control login-password" id="exampleInputPassword" placeholder="Password"/>
                         </div>
-                        
-                        <button type="submit" className="btn form-control get-started">Login</button>
-                       
-                     
-                       <button type="submit" className="btn form-control get-started"><a href="/signup" style={{color:'white'}}>Sign Up</a></button>
+                        <h5>Don't have an account? <a href="/signup">Sign up</a></h5>
+                        <button type="submit" onClick={this.handleLoginUser} className="btn form-control get-started">Login</button>
                         
                         <hr />
                        

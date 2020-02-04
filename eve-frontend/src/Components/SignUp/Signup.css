@@ -7,20 +7,23 @@
     margin-top: 3vw; 
   }
   .login-email{
-    height: 3vw;
+    height: 2.5vw;
+  }
+  .signup-fname{
+    height: 2.5vw;
   }
 .names{
     margin-bottom: 0.9vw;
 }
   .signup-password{
-    height: 3vw;
+    height: 2.5vw;
   }
   .get-started, .get-started:hover, .get-started:focus{
     background: #d1410c;
     color: #fff;
     font-weight: 700;
     font-size:12px;
-    height: 3vw;
+    height: 2.5vw;
     width:30vw;
   
   }
@@ -56,9 +59,7 @@
     .login-email{
       height: 35px;
     }
-    .names{
-        margin-bottom: 0.9vw;
-    }
+    
       .signup-password{
         height: 35px;
       }
