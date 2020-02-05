@@ -3,6 +3,7 @@ import NavbarLogin from '../Navbar/NavbarLogin.js';
 import Footer from '../Footer/Footer';
 import './Login.css';
 import axios from 'axios';
+import {Redirect} from 'react-router';
 
 
 class Login extends Component{
@@ -12,6 +13,7 @@ class Login extends Component{
           authFlag: false,
           email: "",
           password:"",
+          restoken:""
         }
     }
 
@@ -33,7 +35,6 @@ class Login extends Component{
             email : this.state.email,
             password : this.state.password,
         }
-        axios.defaults.withCredentials = true;
         axios.post('http://localhost:3001/api/auth',data)
             .then(response => {
                 console.log("Status Code : ",response.status);
@@ -41,8 +42,9 @@ class Login extends Component{
                 if(response.status === 200){
                     this.setState({
                         authFlag : true,
-                        email:response.data
+                        restoken:response.data.token
                     })
+                    localStorage.setItem("token",response.data.token);
                 }else{
                     this.setState({
                         authFlag : false
@@ -54,9 +56,14 @@ class Login extends Component{
             });
     }
     render(){
+        let redirectVar = null;
+        if(this.state.authFlag === true){
+            redirectVar = <Redirect to = "/"></Redirect>
+        }
       
         return(<React.Fragment>
             <div id="container" className="LoginMain">
+            {redirectVar}
                 <div className="main">
                 <NavbarLogin/>
 
