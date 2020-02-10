@@ -1,0 +1,92 @@
+.eventCreationMain{
+    background-image:  url(../Images/Best-For-Your-Event.jpg);
+    background-repeat: round;
+    margin-bottom: 0;
+    background-size: auto;
+}
+
+.eventCreationEducation{
+    background-image:  url(../Images/Best-For-Your-Event.jpg);
+    background-repeat: round;
+    margin-bottom: 0;
+    background-size: auto;
+}
+.innerclass{
+    width: 48vw;
+    margin-bottom: 8vh;
+}
+.content{
+    font-family: "Quicksand" , sans-serif;
+    
+}
+.createEventHeading{
+    font-size: 2vw;
+    font-weight: 700;
+    font-family: "Quicksand" , sans-serif;
+    padding-top: .5vw;
+    text-align: center;
+}
+.eventDetailsText{
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+.eventTitile{
+    font-size: .9vw;
+    font-weight: 600;
+}
+.required{
+    color: #f04;
+}
+.createEventBtn, .createEventBtn:hover, .createEventBtn:focus{
+    background: #d1410c;
+    color: #fff;
+    font-weight: 800;
+    font-size:1.2vw;
+    height: 2.4vw;
+    width:100%;
+    margin-top: 0.9vw;
+}
+.eventCreateState{
+      text-align: left;
+      padding-right: 0px;
+}
+.eventCreateZip{
+    margin-left: 0px;
+    margin-left: 0px;
+    padding: 0px;
+ }
+.scrollable-menu {
+    height: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+}
+.country-btnn{
+    height: 2.5vw;
+    margin: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+.eventDescription{
+    height:4vw;
+}
+.ticketPricing{
+    padding: 0px;
+    margin: 0px;
+}
+.ticketTable{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+.eventCreationCity{
+    margin-left: 0px;
+    padding: 0px;
+}
+.StartDateTimeHeading, .eventStartingDateTime, .eventEndingDateTime{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.eventEndingDateTime2, .eventStartingTime {
+margin-right: 0px;
+padding-right: 0px;
+}

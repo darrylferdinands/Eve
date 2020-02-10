@@ -9,6 +9,7 @@ import SignUp from "./Components/SignUp/signup";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import EventSearch from "./Components/EventSearch/eventSearch";
+import EventCreation from "./Components/EventCreation/eventCreation";
 import "./App.css";
 
 // Redux
@@ -37,6 +38,7 @@ const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/eventsearch" component={EventSearch} />
+              <Route exact path="/eventcreation" component={EventCreation} />
             </Switch>
           </section>
         </Fragment>
