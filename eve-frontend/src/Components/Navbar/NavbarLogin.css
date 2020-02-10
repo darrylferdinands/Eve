@@ -1,7 +1,7 @@
 .navbar-login{
     background-color: black;
     height: 70px;
-    
+    border-radius: 0px;
 }
 .navbar-brand img{
     top:0px;
@@ -28,4 +28,18 @@
     border-radius: 10px;
     font-size: 18px;
     font-weight: 800;
+}
+
+
+.loganchor:hover {
+    background-color: aliceblue;
+    border: aliceblue;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    color: black;
+}
+
+.loganchor {
+    color:white;
 }

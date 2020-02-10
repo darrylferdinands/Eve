@@ -1,29 +1,39 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { setAlert } from "../../actions/alerts";
+import { register } from "../../actions/auth";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-import { login } from "../../actions/auth";
 import NavbarLogin from "../Navbar/NavbarLogin.js";
-
 import Alert from "../Alert/Alert";
-import "./Login.css";
+import "./Signup.css";
 
-const Login = ({ login, isAuthenticated }) => {
+const SignUp = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
-    password: ""
+    password: "",
+    password2: ""
   });
 
-  const { email, password } = formData;
+  const { name, email, password, password2 } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {
     e.preventDefault();
-    console.log(email);
-    login(email, password);
+    if (password !== password2) {
+      setAlert("Passwords do not match", "danger");
+    } else {
+      register({
+        name,
+        email,
+        password
+      });
+    }
   };
+
   if (isAuthenticated) {
     return <Redirect to="/eventsearch" />;
   }
@@ -37,40 +47,57 @@ const Login = ({ login, isAuthenticated }) => {
           <div className="row">
             <div className="div-center">
               <div className="content">
-                <h2 className="login-lets">Let's get Started</h2>
-                <h3 className="login-use">Use Google or Email to sign in</h3>
+                <h2 className="login-lets">Welcome</h2>
+                <h3 className="login-use">Create an account</h3>
                 <hr />
                 <form onSubmit={e => onSubmit(e)}>
                   <div className="form-group">
                     <input
+                      type="text"
+                      onChange={e => onChange(e)}
+                      name="name"
+                      className="form-control signup-fname"
+                      id="exampleInputFName"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
                       type="email"
                       onChange={e => onChange(e)}
-                      className="form-control login-email"
+                      className="form-control signup-email"
                       id="exampleInputEmail1"
-                      placeholder="Email address"
                       name="email"
+                      placeholder="Email address"
                     />
                   </div>
                   <div className="form-group">
                     <input
                       type="password"
                       onChange={e => onChange(e)}
-                      className="form-control login-password"
+                      className="form-control signup-password"
                       id="exampleInputPassword"
                       placeholder="Password"
                       name="password"
                     />
                   </div>
-                  <h5>
-                    Don't have an account? <a href="/signup">Sign up</a>
-                  </h5>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      onChange={e => onChange(e)}
+                      className="form-control signup-password"
+                      id="exampleInputPassword"
+                      placeholder="Confirm Password"
+                      name="password2"
+                    />
+                  </div>
+
                   <button
                     type="submit"
                     className="btn form-control get-started"
                   >
-                    Login
+                    Sign Up
                   </button>
-
                   <hr />
                 </form>
               </div>
@@ -82,8 +109,9 @@ const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-Login.propTypes = {
-  login: PropTypes.func.isRequired,
+SignUp.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool
 };
 
@@ -93,5 +121,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { login }
-)(Login);
+  { setAlert, register }
+)(SignUp);

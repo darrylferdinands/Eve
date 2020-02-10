@@ -1,17 +1,14 @@
-.page-footer{
-    display: inline;
-    bottom: 0px;
-    background-color: #fff;
-    color: black;
-    
-    margin-top: 50px;
-}
-
 li{
     display: inline-block;
     font-weight: 500;
 }
 .footer-btn1, .footer-btn2, .footer-btn3{
     font-size: 2vh;
-    margin: 0px;
+} 
+.testfoot {
+    text-align: center;
+    display: inline;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
