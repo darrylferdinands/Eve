@@ -1,0 +1,29 @@
+.navbar{
+    background: transparent;
+    border-color: transparent;
+}
+
+.navbar .collapse{
+    border-color: transparent;
+}
+
+.navbar-btn{ 
+    background: transparent ;
+    border-radius: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 800;
+}
+.navbar-btn:hover, .navbar-btn:focus{
+    background-color: aliceblue;
+    border: aliceblue;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.navbar-brand img{
+    top:0px;
+    margin-left: 2vw;
+    width: 12rem;
+    height: 6rem;
+}

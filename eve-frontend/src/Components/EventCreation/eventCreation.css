@@ -1,5 +1,6 @@
 .eventCreationMain{
-    background-image:  url(../Images/Best-For-Your-Event.jpg);
+    /* background-image:  url(../Images/space1); */
+    background-color: #ffffff;
     background-repeat: round;
     margin-bottom: 0;
     background-size: auto;
@@ -12,8 +13,10 @@
     background-size: auto;
 }
 .innerclass{
-    width: 48vw;
+    width: 52vw;
     margin-bottom: 8vh;
+    border-radius: 20px;
+    background-color: #f5f4ef;
 }
 .content{
     font-family: "Quicksand" , sans-serif;
@@ -25,26 +28,32 @@
     font-family: "Quicksand" , sans-serif;
     padding-top: .5vw;
     text-align: center;
+    color: #ff6f61;
+    
 }
 .eventDetailsText{
     font-size: 1.5vw;
     font-weight: 700;
+    color: #ff6f61;
+   
 }
 .eventTitile{
     font-size: .9vw;
     font-weight: 600;
+    color: #ff6f61;
 }
 .required{
     color: #f04;
 }
 .createEventBtn, .createEventBtn:hover, .createEventBtn:focus{
-    background: #d1410c;
+    background: #ff6f61;
     color: #fff;
     font-weight: 800;
     font-size:1.2vw;
-    height: 2.4vw;
-    width:100%;
+    height: 2.5vw;
+    width:25%;
     margin-top: 0.9vw;
+    margin-left: 20vw;
 }
 .eventCreateState{
       text-align: left;
@@ -72,11 +81,13 @@
 .ticketPricing{
     padding: 0px;
     margin: 0px;
+    border: 0px;
 }
 .ticketTable{
     padding: 0px;
     margin: 0px;
     width: 100%;
+    border: 0px;
 }
 .eventCreationCity{
     margin-left: 0px;

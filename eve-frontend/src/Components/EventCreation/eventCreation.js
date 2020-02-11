@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import NavbarLogin from "../Navbar/NavbarLogin.js";
+import NavbarT from "../Navbar/NavbarT.js";
 import Alert from "../Alert/Alert";
 import "../Login/Login.css";
 import "./eventCreation.css";
@@ -38,17 +38,21 @@ class EventCreation extends Component {
     rows.splice(idx, 1)
     this.setState({ rows })
   }
+  onChange = (idx) => (e) => {
+    e.preventDefault()
+  }
   render() {
   return (
     
       <div  id="container" className = "eventCreationMain">
         <div className="main">
-          <NavbarLogin />
+          <NavbarT />
           <Alert />
           <div className="row">
+          <div className="createEventHeading">Create An Event</div>
             <div className="div-center innerclass">
               <div className="content">
-              <div className="createEventHeading">Create Event</div>
+              
                 
                   <h2 className="eventDetailsText">Event Details</h2>
               
@@ -58,7 +62,7 @@ class EventCreation extends Component {
                     <h7 className="eventTitile">Event Title</h7> <span className="required">*</span>
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="Give a short distinct name"
@@ -69,7 +73,7 @@ class EventCreation extends Component {
                     <h7 className="eventTitile">Event Location</h7> <span className="required">*</span>
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="Event Venue name"
@@ -79,7 +83,7 @@ class EventCreation extends Component {
                     <div className="form-group">
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="Address"
@@ -89,7 +93,7 @@ class EventCreation extends Component {
                     <div className="form-group">
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="Address 2"
@@ -100,7 +104,7 @@ class EventCreation extends Component {
                     <div className="col-md-6 eventCreationCity">
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="City"
@@ -111,7 +115,7 @@ class EventCreation extends Component {
                     <div className="form-group eventCreateState col-md-6">
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className="form-control login-email "
                       id="exampleInputEmail1"
                       placeholder="State"
@@ -121,7 +125,7 @@ class EventCreation extends Component {
                     <div className="form-group eventCreateZip col-md-6">
                     <input
                       type="text"
-                      onChange={e => onChange(e)}
+                      // onChange={e => onChange(e)}
                       className=" form-control login-email"
                       id="exampleInputEmail1"
                       placeholder="Zip/Postal"
@@ -151,10 +155,10 @@ class EventCreation extends Component {
                    
                     <div className="col-md-12 form-group eventStartingDateTime">
                     <div className="col-md-6 StartDateTimeHeading">
-                    <label className="control-label StartDateTimeHeading" for="date">Start Date and Time</label> <span className="required">*</span>
+                    <label className="eventTitile StartDateTimeHeading" for="date">Start Date and Time</label> <span className="required">*</span>
                     <div class="form-group">
                       <div className="col-md-6 eventStartingDateTime country-btnn">
-                      <input className="form-control country-btnn" id="date" onChange={e => onChange(e)} name="eventStartDate"  placeholder="MM/DD/YYYY" type="text"/>
+                      <input className="form-control country-btnn" id="date" name="eventStartDate"  placeholder="MM/DD/YYYY" type="text"/>
                       </div>
                       <div className="col-md-6 eventStartingTime country-btnn">
                       <button type="button" className="form-control country-btnn login-email dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Time<span class="caret"></span>
@@ -178,10 +182,10 @@ class EventCreation extends Component {
                     </div>
                     </div>
                     <div className="col-md-6 eventEndingDateTime">
-                    <label className="control-label" for="date">End Date and Time</label> <span className="required">*</span>
+                    <label className="eventTitile" for="date">End Date and Time</label> <span className="required">*</span>
                     <div class="form-group">
                       <div className="col-md-6 eventEndingDateTime country-btnn">
-                      <input className="form-control country-btnn" id="date" onChange={e => onChange(e)} name="eventEndDate" placeholder="MM/DD/YYYY" type="text" name="eventStartDate"/>
+                      <input className="form-control country-btnn" id="date" name="eventEndDate" placeholder="MM/DD/YYYY" type="text" name="eventStartDate"/>
                       </div>
                       <div className="col-md-6 eventEndingDateTime2 country-btnn">
                       <button type="button" className="form-control country-btnn login-email dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -207,10 +211,10 @@ class EventCreation extends Component {
                     </div>
                     </div>
                     <div className="form-group">
-                      <label className="control-label" for="date">Event Description</label>
+                      <label className="eventTitile" for="date">Event Description</label>
                         <input
                           type="text"
-                          onChange={e => onChange(e)}
+                          // onChange={e => onChange(e)}
                           className="form-control login-email eventDescription"
                           id="exampleInputEmail1"
                           placeholder="Please provide Event description"
@@ -221,14 +225,14 @@ class EventCreation extends Component {
                     
                       
                     
-                    <label className="control-label ticketPricing" for="date">Ticket Pricing</label> <span className="required">*</span>
-                    <table className="table table-bordered table-hover ticketTable" id="tab_logic">
+                    <label className="eventTitile ticketPricing" for="date">Ticket Pricing</label> <span className="required">*</span>
+                    <table className="table ticketTable" id="tab_logic">
                       <thead>
-                        <tr>
-                          <th className="text-center"> Ticket Type </th>
-                          <th className="text-center"> Quantity </th>
-                          <th className="text-center"> Price </th>
-                          <th><button onClick={this.handleAddRow} className="btn btn-primary addTicketBtn">Add Ticket</button></th>
+                        <tr className="ticketTable">
+                          <th className="eventTitile"> Ticket Type </th>
+                          <th className="eventTitile"> Quantity </th>
+                          <th className="eventTitile"> Price </th>
+                          
                           
                         </tr>
                       </thead>
@@ -262,6 +266,7 @@ class EventCreation extends Component {
                                 className="form-control"
                               />
                             </td>
+                            <td><button onClick={this.handleAddRow} className="btn btn-outline-danger btn-sm">Add Ticket</button></td>
                             <td>
                               <button
                                 className="btn btn-outline-danger btn-sm"
@@ -283,7 +288,7 @@ class EventCreation extends Component {
                     className="btn form-control createEventBtn"
                     onClick={this.handlecreateevent}
                   >
-                    Create Event
+                    Publish Your Event
                   </button>
 
                   <hr/>

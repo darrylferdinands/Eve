@@ -1,14 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
 import NavbarHome from "../Navbar/NavbarHome.js";
 import "../HomePage/HomePage.css";
 import img1 from "../Images/img1.JPG";
 import img2 from "../Images/community.jpg";
+import { Redirect } from "react-router-dom";
 
-const Landing = () => {
+class HomePage extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      redirectFlag: false,
+    }
+}
+  createEvent = (e) => {
+    this.setState ({
+      redirectFlag: true
+    })
+  }
+  render(){
+    let redirectVar = null;
+    if(this.state.redirectFlag){
+      redirectVar = <Redirect to="/eventcreation" />
+    }
   return (
     <React.Fragment>
       <header id="container main" className="home-page">
         <NavbarHome />
+        {redirectVar}
         <div className="row">
           <div className="top-component">
             <div className="top-component-media">
@@ -31,7 +49,7 @@ const Landing = () => {
 
               <p className="Headline_Text">Plan Your Event Today</p>
 
-              <button type="button" className="btn top-component-content-btn">
+              <button type="button" onClick={this.createEvent} className="btn top-component-content-btn">
                 Create Event
               </button>
             </div>
@@ -96,6 +114,7 @@ const Landing = () => {
       </header>
     </React.Fragment>
   );
+  }
 };
 
-export default Landing;
+export default HomePage;
