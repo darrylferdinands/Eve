@@ -7,7 +7,7 @@ import "./eventCreation.css";
 
 class EventCreation extends Component {
   state = {
-    country:"Country",
+    EventType:"Event Type",
     rows: [{}]
   };
   handleChange = idx => (e) => {
@@ -69,6 +69,31 @@ class EventCreation extends Component {
                       name="eventTitle"
                     />
                   </div>
+
+                  <div className="form-group">
+                  <h7 className="eventTitile">Organizer Name</h7><span className="required">*</span>
+                  <input
+                      type="text"
+                      //onChange={e => onChange(e)}
+                      className="form-control login-email"
+                      id="exampleInputEmail1"
+                      placeholder="Give a short distinct name"
+                      name="eventTitle"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                      <label className="control-label eventTitile" for="date">Organizer Description</label>
+                        <input
+                          type="text"
+                          //onChange={e => onChange(e)}
+                          className="form-control login-email eventDescription"
+                          id="exampleInputEmail1"
+                          placeholder="Please provide Event description"
+                          name="eventdescription"
+                        />
+                    </div>
+
                   <div className="form-group">
                     <h7 className="eventTitile">Event Location</h7> <span className="required">*</span>
                     <input
@@ -134,22 +159,19 @@ class EventCreation extends Component {
                     </div>
                     <div className="btn btn-group col-md-6 country-btnn">
                       <button type="button" className="form-control login-email dropdown-toggle country-btnn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {this.state.country} <span class="caret"></span>
+                        {this.state.EventType} <span class="caret"></span>
                       </button>
                       <ul className="dropdown-menu scrollable-menu">
-                        <li className="col-md-12"><a href="#">United States</a></li>
-                        <li className="col-md-12"><a href="#">Australia</a></li>
-                        <li className="col-md-12"><a href="#">Canada</a></li>
-                        <li className="col-md-12"><a href="#">China</a></li>
-                        <li className="col-md-12"><a href="#">France</a></li>
-                        <li className="col-md-12"><a href="#">Germany</a></li>
-                        <li className="col-md-12"><a href="#">India</a></li>
-                        <li className="col-md-12"><a href="#">Japan</a></li>
-                        <li className="col-md-12"><a href="#">Nepal</a></li>
-                        <li className="col-md-12"><a href="#">Russia</a></li>
-                        <li className="col-md-12"><a href="#">Singapore</a></li>
-                        <li className="col-md-12"><a href="#">Spain</a></li>
-                        <li className="col-md-12"><a href="#">United Kingdom</a></li>
+                        <li className="col-md-12"><a href="#">Conferences</a></li>
+                        <li className="col-md-12"><a href="#">Job Fairs</a></li>
+                        <li className="col-md-12"><a href="#">Music</a></li>
+                        <li className="col-md-12"><a href="#">Product Launches</a></li>
+                        <li className="col-md-12"><a href="#">Reunions</a></li>
+                        <li className="col-md-12"><a href="#">Social</a></li>
+                        <li className="col-md-12"><a href="#">Sports</a></li>
+                        <li className="col-md-12"><a href="#">Technical</a></li>
+                        <li className="col-md-12"><a href="#">Trade Show/Expo</a></li>
+                        <li className="col-md-12"><a href="#">Worshops</a></li>
                       </ul>
                     </div>
                    
