@@ -37,8 +37,8 @@ const App = () => {
               <Route exact path="/NavbarLogin" component={NavbarLogin} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/eventsearch" component={EventSearch} />
-              <Route exact path="/eventcreation" component={EventCreation} />
+              <Route exact path="/searchevent" component={EventSearch} />
+              <Route exact path="/createevent" component={EventCreation} />
             </Switch>
           </section>
         </Fragment>
