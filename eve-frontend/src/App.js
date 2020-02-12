@@ -10,6 +10,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import EventSearch from "./Components/EventSearch/eventSearch";
 import EventCreation from "./Components/EventCreation/eventCreation";
+import CreateCommunity from "./Components/CreateCommunity/createCommunity";
 import "./App.css";
 
 // Redux
@@ -39,6 +40,7 @@ const App = () => {
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/searchevent" component={EventSearch} />
               <Route exact path="/createevent" component={EventCreation} />
+              <Route exact path="/createcommunity" component={CreateCommunity} />
             </Switch>
           </section>
         </Fragment>
