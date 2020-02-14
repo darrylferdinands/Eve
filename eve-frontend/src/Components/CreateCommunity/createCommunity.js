@@ -4,327 +4,273 @@ import NavbarT from "../Navbar/NavbarT.js";
 import Alert from "../Alert/Alert";
 import "../Login/Login.css";
 import "./createCommunity.css";
+import { Progress } from 'reactstrap';
 
 class CreateCommunity extends Component {
-  state = {
-    EventType: "Event Type",
-    rows: [{}]
-  };
-  handleChange = idx => (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    const rows = [...this.state.rows];
-    rows[idx] = {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentStep: 1,
+      topicName:  '',
+      groupName: '',
+      groupDescription: '', 
+    }
+  }
+
+  handleChange = event => {
+    const {name, value} = event.target
+    this.setState({
       [name]: value
-    };
+    }) 
+    console.log(this.state.topicName)
+    console.log(this.state.groupDescription)
+    console.log(this.state.groupName)  
+  }
+   
+  handleSubmit = event => {
+    event.preventDefault()
+    const { topicName, groupName, groupDescription } = this.state
+    
+  }
+  
+  _next = () => {
+    let currentStep = this.state.currentStep
+    currentStep = currentStep >= 3? 4: currentStep + 1
     this.setState({
-      rows
-    });
-  };
-  handleAddRow = (e) => {
-    e.preventDefault()
-    const item = {
-      name: "",
-      mobile: ""
-    };
+      currentStep: currentStep
+    })
+  }
+    
+  _prev = () => {
+    let currentStep = this.state.currentStep
+    currentStep = currentStep <= 1? 1: currentStep - 1
     this.setState({
-      rows: [...this.state.rows, item]
-    });
-  };
+      currentStep: currentStep
+    })
+  }
 
-  handleRemoveSpecificRow = (idx) => (e) => {
-    e.preventDefault()
-    const rows = [...this.state.rows]
-    rows.splice(idx, 1)
-    this.setState({ rows })
-  }
-  onChange = (idx) => (e) => {
-    e.preventDefault()
-  }
-  render() {
+/*
+* the functions for our button
+*/
+previousButton() {
+  let currentStep = this.state.currentStep;
+  if(currentStep !==1){
     return (
+      <button 
+        className="btn btn-secondary previousBtn" 
+        type="button" onClick={this._prev}>
+      Previous
+      </button>
+    )
+  }
+  return null;
+}
 
-      <div id="container" className="eventCreationMain">
-        <div className="main">
+nextButton(){
+  let currentStep = this.state.currentStep;
+  if(currentStep <4){
+    return (
+      <button 
+        className="btn float-right previousBtn" 
+        type="button" onClick={this._next}>
+      Next
+      </button>        
+    )
+  }
+  return null;
+}
+  
+  render() {  
+     
+    return (
+      <React.Fragment>
           <NavbarT />
           <Alert />
-          <div className="row">
-            <div className="createEventHeading">Create An Event</div>
-            <div className="div-center innerclass">
-              <div className="content">
 
-
-                <h2 className="eventDetailsText">Event Details</h2>
-
-
-                <form>
-                  <div className="form-group">
-                    <h7 className="eventTitile">Event Title</h7> <span className="required">*</span>
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Give a short distinct name"
-                      name="eventTitle"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <h7 className="eventTitile">Organizer Name</h7><span className="required">*</span>
-                    <input
-                      type="text"
-                      //onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Give a short distinct name"
-                      name="eventTitle"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="control-label eventTitile" for="date">Organizer Description</label>
-                    <input
-                      type="text"
-                      //onChange={e => onChange(e)}
-                      className="form-control login-email eventDescription"
-                      id="exampleInputEmail1"
-                      placeholder="Please provide Event description"
-                      name="eventdescription"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <h7 className="eventTitile">Event Location</h7> <span className="required">*</span>
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Event Venue Name"
-                      name="eventVenue"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Address"
-                      name="eventAddress"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Address 2"
-                      name="eventAddress2"
-                    />
-                  </div>
-
-                  <div className="col-md-6 eventCreationCity">
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="City"
-                      name="eventCity"
-                    />
-                  </div>
-
-                  <div className="form-group eventCreateState col-md-6">
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email "
-                      id="exampleInputEmail1"
-                      placeholder="State"
-                      name="eventState"
-                    />
-                  </div>
-                  <div className="form-group eventCreateZip col-md-6">
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className=" form-control login-email"
-                      id="exampleInputEmail1"
-                      placeholder="Zip/Postal"
-                      name="eventZip"
-                    />
-                  </div>
-                  <div className="btn btn-group col-md-6 country-btnn">
-                    <button type="button" className="form-control login-email dropdown-toggle country-btnn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {this.state.EventType} <span class="caret"></span>
-                    </button>
-                    <ul className="dropdown-menu scrollable-menu">
-                      <li className="col-md-12"><a href="#">Conferences</a></li>
-                      <li className="col-md-12"><a href="#">Job Fairs</a></li>
-                      <li className="col-md-12"><a href="#">Music</a></li>
-                      <li className="col-md-12"><a href="#">Product Launches</a></li>
-                      <li className="col-md-12"><a href="#">Reunions</a></li>
-                      <li className="col-md-12"><a href="#">Social</a></li>
-                      <li className="col-md-12"><a href="#">Sports</a></li>
-                      <li className="col-md-12"><a href="#">Technical</a></li>
-                      <li className="col-md-12"><a href="#">Trade Show/Expo</a></li>
-                      <li className="col-md-12"><a href="#">Worshops</a></li>
-                    </ul>
-                  </div>
-
-                  <div className="col-md-12 form-group eventStartingDateTime">
-                    <div className="col-md-6 StartDateTimeHeading">
-                      <label className="eventTitile StartDateTimeHeading" for="date">Start Date and Time</label> <span className="required">*</span>
-                      <div class="form-group">
-                        <div className="col-md-6 eventStartingDateTime country-btnn">
-                          <input className="form-control country-btnn" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
-                        </div>
-                        <div className="col-md-6 eventStartingTime country-btnn">
-                          <button type="button" className="form-control country-btnn login-email dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Time<span class="caret"></span>
-                          </button>
-                          <ul className="dropdown-menu scrollable-menu col-md-12">
-                            <li className="col-md-12"><a href="#">08:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">09:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">10:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">11:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">12:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">01:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">02:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">03:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">04:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">05:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">06:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">07:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">08:00 PM</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-6 eventEndingDateTime">
-                      <label className="eventTitile EndDateTime" for="date">End Date and Time</label> <span className="required">*</span>
-                      <div class="form-group">
-                        <div className="col-md-6 eventEndingDateTime country-btnn EndDateTime">
-                          <input className="form-control country-btnn EndDateTime" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
-                        </div>
-                        <div className="col-md-6 eventEndingDateTime2 country-btnn">
-                          <button type="button" className="form-control country-btnn login-email dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Time<span class="caret"></span>
-                          </button>
-                          <ul className="dropdown-menu scrollable-menu col-md-12">
-                            <li className="col-md-12"><a href="#">08:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">09:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">10:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">11:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">12:00 AM</a></li>
-                            <li className="col-md-12"><a href="#">01:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">02:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">03:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">04:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">05:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">06:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">07:00 PM</a></li>
-                            <li className="col-md-12"><a href="#">08:00 PM</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="eventTitile" for="date">Event Description</label>
-                    <input
-                      type="text"
-                      // onChange={e => onChange(e)}
-                      className="form-control login-email eventDescription"
-                      id="exampleInputEmail1"
-                      placeholder="Please provide event description"
-                      name="eventdescription"
-                    />
-                  </div>
-
-
-
-
-                  <label className="eventTitile ticketPricing" for="date">Ticket Pricing</label> <span className="required">*</span>
-                  <table className="table ticketTable" id="tab_logic">
-                    <thead>
-                      <tr className="ticketTable">
-                        <th className="eventTitile"> Ticket Type </th>
-                        <th className="eventTitile"> Quantity </th>
-                        <th className="eventTitile"> Price </th>
-                        <th><button onClick={this.handleAddRow} className="btn form-control btn-outline-danger btn-sm tablebtn">Add Ticket</button></th>
-
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.rows.map((item, idx) => (
-                        <tr id="addr0" key={idx}>
-                          <td>
-                            <input
-                              type="text"
-                              name="Ticket Type"
-                              value={this.state.rows[idx].name}
-                              onChange={this.handleChange(idx)}
-                              className="form-control"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              name="quantity"
-                              value={this.state.rows[idx].mobile}
-                              onChange={this.handleChange(idx)}
-                              className="form-control"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="text"
-                              name="Price"
-                              value={this.state.rows[idx].mobile}
-                              onChange={this.handleChange(idx)}
-                              className="form-control"
-                            />
-                          </td>
-
-                          <td>
-                            <button
-                              className="btn btn-outline-danger btn-sm form-control tablebtn"
-                              onClick={this.handleRemoveSpecificRow(idx)}
-                            >
-                              Remove
-                              </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-
-
-
-                  <button
-                    type="submit"
-                    className="btn form-control createEventBtn"
-                    onClick={this.handlecreateevent}
-                  >
-                    Publish Your Event
-                  </button>
-
-                  <hr />
-                </form>
-              </div>
-            </div>
-          </div>
+      <form onSubmit={this.handleSubmit}>
+      <div className="div-center communityCreateMain">
+        <Step1 
+          currentStep={this.state.currentStep} 
+          handleChange={this.handleChange}
+          topicName={this.state.topicName}
+        />
+        <Step2 
+          currentStep={this.state.currentStep} 
+          handleChange={this.handleChange}
+          groupName={this.state.groupName}
+        />
+        <Step3 
+          currentStep={this.state.currentStep} 
+          handleChange={this.handleChange}
+          groupDescription={this.state.groupDescription}
+        />
+        <Step4 
+          currentStep={this.state.currentStep} 
+          handleChange={this.handleChange}
+          
+        />
+        <div className="col-md-12">
+          <div className="col-md-6">
+        {this.previousButton()}
         </div>
-      </div>
-
+        <div className="col-md-6">
+        {this.nextButton()}
+        </div>
+        </div>
+        </div>
+      </form>
+      </React.Fragment>
     );
   }
 }
-export default CreateCommunity;
 
+function Step1(props) {
+  if (props.currentStep !== 1) {
+    return null
+  } 
+  return(
+    <div className="form-group communityCreateSubMain">
+      <div class="progress" style={{height: '1.2vh'}}>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style={{width: '25%'}}>
+        
+        </div>
+        </div>
+      
+      <span className="createHeading"> First, tell us the topics that discribe your group's interests</span>
+      <h4 className="step1subHeading">Be specific! This will help us promote your group to the right people.</h4>
+      <div className="topicInputField">
+      <input
+        className="form-control step-input"
+        id="exampleInputEmail1"
+        name="topicName"
+        type="text"
+        placeholder="Give a topic name"
+        value={props.username}
+        onChange={props.handleChange}
+        />
+      </div>
+      
+      
+    </div>
+  );
+}
+
+function Step2(props) {
+  if (props.currentStep !== 2) {
+    return null
+  } 
+  return(
+    <div className="form-group communityCreateSubMain">
+      <div class="progress" style={{height: '1.2vh'}}>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style={{width: '50%'}}>
+        
+        </div>
+        </div>
+      <h1 className="step2Heading">What will your group’s name be?</h1>
+      <h4 className="step1subHeading">Choose a name that will give people a clear idea of what the group is about. Feel free to get creative! You can edit this later if you change your mind.</h4>
+      <input
+        className="form-control step-input"
+        id="groupName"
+        name="groupName"
+        type="text"
+        placeholder="Enter groupname"
+        value={props.username}
+        onChange={props.handleChange}
+        />
+    </div>
+  );
+}
+
+function Step3(props) {
+  if (props.currentStep !== 3) {
+    return null
+  } 
+  return(
+    <React.Fragment>
+    <div className="form-group communityCreateSubMain">
+    <div class="progress" style={{height: '1.2vh'}}>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style={{width: '75%'}}>
+        
+        </div>
+        </div>
+      <h1 className="step2Heading">Now describe what your group will be about</h1>
+      <h4 className="step1subHeading">People will see this when we promote your group, but you’ll be able to add to it later, too.</h4>
+      <ul className="step1subHeading">
+        <li><span>1. What's the purpose of the group?</span></li><br></br>
+        <li>2. Who should join?</li><br></br>
+        <li>3. What will you do at your events?</li>
+      </ul>
+      <input
+        className="form-control groupDescription"
+        id="groupDescription"
+        name="groupDescription"
+        type="text"
+        placeholder="Please write atleast 50 characters"
+        value={props.password}
+        onChange={props.handleChange}
+        />  
+        <div className="descriptionExampleMain">
+          
+            <div className="bulbImage">
+              <img src="https://secure.meetup.com/mu_static/en-US/lightbulb.582d42c2.svg" alt="lightbulb"></img> <span>Here's an example:</span>
+              </div>
+                  
+                  <div className="exampleTextMain">
+                   
+                      <h5 className="exampleText">"This is a group for anyone interested in hiking, rock climbing, camping, kayaking, bouldering, etc. All skill levels are welcome. I started this group to meet other outdoor enthusiasts. Looking forward to exploring the outdoors with everybody."
+                      </h5>
+                      
+                      </div>
+                      
+                            
+                            </div>    
+    </div>
+    
+    </React.Fragment>
+  );
+}
+
+function Step4(props) {
+  if (props.currentStep !== 4) {
+    return null
+  } 
+  return(
+    <React.Fragment>
+    <div className="form-group communityCreateSubMain">
+    <div class="progress" style={{height: '1.2vh'}}>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style={{width: '100%'}}>
+        
+        </div>
+        </div>
+      <h1 className="step2Heading">Almost done! Just take a minute to review our guidelines</h1>
+      <h4 className="step1subHeading">Meetup is all about helping people live fuller, happier lives—with the help of strong communities. This means that all groups should:</h4>
+      <ul className="step1subHeading">
+        <li ><span>* Provide growth opportunities for members</span></li><br></br>
+        <li >* Encourage real human interactions</li><br></br>
+        <li >* Meet in real life</li>
+        <li >* Have a host present at all events</li>
+        <li >* Be transparent about the group’s intentions</li>
+      </ul>
+      
+        <div className="descriptionExampleMain">
+          
+            <div className="bulbImage">
+              <img src="https://secure.meetup.com/mu_static/en-US/lightbulb.582d42c2.svg" alt="lightbulb"></img> <span>Here's an example:</span>
+              </div>
+                  
+                  <div className="exampleTextMain">
+                   
+                      <h5 className="exampleText">Once you submit your group, a human at Meetup will review it based on these guidelines and make sure it gets promoted to the right people.</h5>
+                      
+                      </div>
+                      
+                            
+                            </div>    
+    </div>
+    <button className="btn btn-block communitySignUp">Sign up</button>
+    </React.Fragment>
+  );
+}
+
+export default CreateCommunity;
 
