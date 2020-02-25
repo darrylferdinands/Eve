@@ -1,27 +1,29 @@
 .navbar{
-    background: -webkit-linear-gradient( #212121, #181818);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom: 1.5rem;
+    background: transparent;
+    border-color: transparent;
 }
-.nav-btn{
-    margin-right: 15rem;
+
+.navbar .collapse{
+    border-color: transparent;
 }
-.navbar-btn{
-    margin-top: 2rem;
+
+.navbar-btn{ 
     background: transparent ;
-    padding: 0.5rem 1rem;
     border-radius: 10px;
     color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
     font-weight: 800;
 }
-.navbar-btn:hover{
-    background-color: rgb(245, 240, 240,232);
+.navbar-btn:hover, .navbar-btn:focus{
+    background-color: aliceblue;
+    border: aliceblue;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
 }
 .navbar-brand img{
     top:0px;
-    margin-left: 20rem;
+    margin-left: 2vw;
     width: 12rem;
     height: 6rem;
 }
