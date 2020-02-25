@@ -10,6 +10,7 @@ class HomePage extends Component {
     super(props);
     this.state ={
       redirectFlag: false,
+      eventFlag:false
     }
 }
   createEvent = (e) => {
@@ -17,10 +18,18 @@ class HomePage extends Component {
       redirectFlag: true
     })
   }
+  eventHome = (e) => {
+    this.setState ({
+      eventFlag: true
+    })
+  }
   render(){
     let redirectVar = null;
     if(this.state.redirectFlag){
-      redirectVar = <Redirect to="/eventcreation" />
+      redirectVar = <Redirect to="/createevent" />
+    }
+    if(this.state.eventFlag){
+      redirectVar = <Redirect to="/eventhome" />
     }
   return (
     <React.Fragment>
@@ -67,9 +76,11 @@ class HomePage extends Component {
             <div className="col-xs-1"></div>
             <div className="col-xs-4">
               <div className="cards1 text-center">
-                <img alt="logo" src={img1} className="card-img-top"></img>
+              <a href="http://localhost:3000/eventhome">
+                <img alt="logo" src={img1} className="card-img-top" href='/eventhome'></img>
+              </a>
                 <div className="card-body">
-                  <button type="button" className="btn btn-card btn-card1">
+                  <button type="button" className="btn btn-card btn-card1" onClick={this.eventHome}>
                     Events
                   </button>
                 </div>

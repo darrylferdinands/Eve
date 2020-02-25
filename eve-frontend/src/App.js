@@ -11,7 +11,7 @@ import setAuthToken from "./utils/setAuthToken";
 import EventSearch from "./Components/EventSearch/eventSearch";
 import EventCreation from "./Components/EventCreation/eventCreation";
 import CreateCommunity from "./Components/CreateCommunity/createCommunity";
-import userProfile from "./Components/UserProfile/userProfile";
+import EventHome from "./Components/EventHome/eventHome";
 import "./App.css";
 
 // Redux
@@ -42,7 +42,7 @@ const App = () => {
               <Route exact path="/searchevent" component={EventSearch} />
               <Route exact path="/createevent" component={EventCreation} />
               <Route exact path="/createcommunity" component={CreateCommunity} />
-              <Route exact path="/userprofile" component={userProfile} />
+              <Route exact path="/eventhome" component={EventHome} />
             </Switch>
           </section>
         </Fragment>
